@@ -1,8 +1,9 @@
 package com.kawunus.skufar
 
 import android.os.Bundle
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
 import com.kawunus.skufar.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -11,11 +12,16 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        init()
     }
 
-    fun openDriver() = with(binding){
-        drawerLayout.openDrawer(GravityCompat.START)
+    private fun init(){
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        val toggle = ActionBarDrawerToggle(this, binding.drawerLayout, binding.includedLayout.toolbar, R.string.open_driver, R.string.close_driver)
+        binding.drawerLayout.addDrawerListener(toggle)
+        toggle.syncState()
     }
+
 }

@@ -6,15 +6,5 @@
     android:layout_height="match_parent"
     tools:context=".MainFragment">
 
-    <Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/blue_light"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:navigationIcon="@drawable/ic_hamburger"
-        android:id="@+id/toolbar"/>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,13 +9,11 @@
     tools:context=".MainActivity"
     tools:openDrawer="start">
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/nav_host_fragment"
-        android:name="com.kawunus.skufar.MainFragment"
+    <include
+        layout="@layout/main_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:defaultNavHost="true"
-        app:navGraph="@navigation/nav_graph" />
+        android:id="@+id/includedLayout"/>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navView"

@@ -11,6 +11,6 @@
     <string name="acc_sign_up">Регистрация</string>
     <string name="acc_sign_in">Вход</string>
     <string name="acc_sign_out">Выход</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="open_driver">Open</string>
+    <string name="close_driver">Close</string>
 </resources>
