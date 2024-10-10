@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/titleTextView"
@@ -32,7 +32,6 @@
         android:id="@+id/passwordEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:hint="@string/password_hint"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="@id/emailEditText"
@@ -44,9 +43,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/sign_up_action"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/emailEditText"
         app:layout_constraintStart_toStartOf="@id/emailEditText"
-        app:layout_constraintTop_toBottomOf="@id/passwordEditText" />
+        app:layout_constraintTop_toBottomOf="@id/passwordEditText"
+        app:layout_constraintVertical_bias="0.0"
+        android:layout_marginBottom="16dp"/>
 
     <Button
         android:id="@+id/resetPasswordButton"

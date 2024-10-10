@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import com.google.android.material.navigation.NavigationView
 import com.kawunus.skufar.databinding.ActivityMainBinding
+import com.kawunus.skufar.utils.dialogHelper.DialogConsts
 import com.kawunus.skufar.utils.dialogHelper.DialogHelper
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -56,11 +57,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
 
             R.id.id_sign_up -> {
-                dialogHelper.provideSignDialog()
+                dialogHelper.provideSignDialog(DialogConsts.DialogState.SignUp)
             }
 
             R.id.id_sign_in -> {
-
+                dialogHelper.provideSignDialog(DialogConsts.DialogState.SignIn)
             }
 
             R.id.id_sign_out -> {
