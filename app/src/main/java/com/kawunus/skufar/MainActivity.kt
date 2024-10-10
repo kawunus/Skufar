@@ -7,11 +7,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import com.google.android.material.navigation.NavigationView
 import com.kawunus.skufar.databinding.ActivityMainBinding
+import com.kawunus.skufar.utils.dialogHelper.DialogHelper
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var binding: ActivityMainBinding
 
+    private val dialogHelper = DialogHelper(this)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         init()
@@ -34,7 +36,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         binding.navView.setNavigationItemSelectedListener(this)
     }
 
-    override fun onNavigationItemSelected(item: MenuItem): Boolean = with(binding){
+    override fun onNavigationItemSelected(item: MenuItem): Boolean = with(binding) {
         when (item.itemId) {
 
             R.id.id_my_adds -> {
@@ -54,7 +56,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
 
             R.id.id_sign_up -> {
-
+                dialogHelper.provideSignDialog()
             }
 
             R.id.id_sign_in -> {
