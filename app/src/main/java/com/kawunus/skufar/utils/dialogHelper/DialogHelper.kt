@@ -11,9 +11,11 @@ import com.kawunus.skufar.presentation.activity.main.ui.MainActivity
 
 class DialogHelper(private val activity: MainActivity, private val authHelper: AuthHelper) {
 
+    private lateinit var binding: SignDialogBinding
+
     fun showSignDialog(state: DialogConsts.DialogState) {
         val dialogBuilder = AlertDialog.Builder(activity)
-        val binding = SignDialogBinding.inflate(activity.layoutInflater)
+        binding = SignDialogBinding.inflate(activity.layoutInflater)
         when (state) {
             DialogConsts.DialogState.SignIn -> {
                 binding.titleTextView.text = activity.getString(R.string.acc_sign_in)
@@ -40,20 +42,17 @@ class DialogHelper(private val activity: MainActivity, private val authHelper: A
         dialogBuilder.show()
     }
 
-    private fun signUp(email:String, password:String){
+    private fun signUp(email:String, password:String) = with(binding){
         authHelper.signUpWithEmail(email, password) { response ->
             when (response) {
                 is AuthResponse.Error -> {
                     Toast.makeText(activity, response.message, Toast.LENGTH_LONG).show()
+                    errorMessage.isVisible = true
+                    errorMessage.text = response.message
                 }
 
                 AuthResponse.Successful -> {
-                    Toast.makeText(
-                        activity,
-                        activity.getString(R.string.sign_in_success),
-                        Toast.LENGTH_LONG
-                    ).show()
-
+                    errorMessage.isVisible = false
                 }
             }
         }
