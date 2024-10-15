@@ -1,4 +1,4 @@
-package com.kawunus.skufar
+package com.kawunus.skufar.presentation.activity.main.ui
 
 import android.os.Bundle
 import android.view.MenuItem
@@ -6,6 +6,9 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.FirebaseAuth
+import com.kawunus.skufar.AuthHelper
+import com.kawunus.skufar.R
 import com.kawunus.skufar.databinding.ActivityMainBinding
 import com.kawunus.skufar.utils.dialogHelper.DialogConsts
 import com.kawunus.skufar.utils.dialogHelper.DialogHelper
@@ -13,8 +16,8 @@ import com.kawunus.skufar.utils.dialogHelper.DialogHelper
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var binding: ActivityMainBinding
-
-    private val dialogHelper = DialogHelper(this)
+    private val mAuth = FirebaseAuth.getInstance()
+    private val dialogHelper = DialogHelper(this, AuthHelper(mAuth))
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         init()
@@ -57,11 +60,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
 
             R.id.id_sign_up -> {
-                dialogHelper.provideSignDialog(DialogConsts.DialogState.SignUp)
+                dialogHelper.showSignDialog(DialogConsts.DialogState.SignUp)
             }
 
             R.id.id_sign_in -> {
-                dialogHelper.provideSignDialog(DialogConsts.DialogState.SignIn)
+                dialogHelper.showSignDialog(DialogConsts.DialogState.SignIn)
             }
 
             R.id.id_sign_out -> {

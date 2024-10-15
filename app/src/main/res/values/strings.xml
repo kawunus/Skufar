@@ -21,4 +21,6 @@
     <string name="sign_in_action">Войти</string>
     <string name="sign_up_action">Зарегестрироваться</string>
     <string name="forget_password">Забыли пароль?</string>
+    <string name="sign_in_error">Регистрация прошла неуспешно</string>
+    <string name="sign_in_success">Регистрация прошла успешно</string>
 </resources>

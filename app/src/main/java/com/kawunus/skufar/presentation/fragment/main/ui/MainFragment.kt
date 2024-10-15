@@ -1,10 +1,9 @@
-package com.kawunus.skufar
+package com.kawunus.skufar.presentation.fragment.main.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.fragment.app.Fragment
 import com.kawunus.skufar.databinding.FragmentMainBinding
 
